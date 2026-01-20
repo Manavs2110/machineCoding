@@ -1,12 +1,12 @@
-package org.example;
+package org.splitWise;
 
-import org.example.model.ExpenseType;
-import org.example.model.Type;
-import org.example.model.User;
-import org.example.model.split.Split;
-import org.example.repository.ExpenseRepository;
-import org.example.service.SplitwiseService;
-import org.example.service.UserService;
+import org.splitWise.model.ExpenseType;
+import org.splitWise.model.Type;
+import org.splitWise.model.User;
+import org.splitWise.model.split.Split;
+import org.splitWise.repository.ExpenseRepository;
+import org.splitWise.service.SplitwiseService;
+import org.splitWise.service.UserService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

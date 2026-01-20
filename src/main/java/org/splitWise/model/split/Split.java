@@ -1,6 +1,6 @@
-package org.example.model.split;
+package org.splitWise.model.split;
 
-import org.example.model.User;
+import org.splitWise.model.User;
 
 import java.math.BigDecimal;
 

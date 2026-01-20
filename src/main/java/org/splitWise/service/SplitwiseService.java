@@ -1,7 +1,7 @@
-package org.example.service;
+package org.splitWise.service;
 
-import org.example.model.split.Split;
-import org.example.repository.ExpenseRepository;
+import org.splitWise.model.split.Split;
+import org.splitWise.repository.ExpenseRepository;
 
 import java.util.List;
 

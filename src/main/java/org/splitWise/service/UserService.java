@@ -1,7 +1,7 @@
-package org.example.service;
+package org.splitWise.service;
 
-import org.example.model.User;
-import org.example.repository.ExpenseRepository;
+import org.splitWise.model.User;
+import org.splitWise.repository.ExpenseRepository;
 
 public class UserService {
     ExpenseRepository expenseRepository;

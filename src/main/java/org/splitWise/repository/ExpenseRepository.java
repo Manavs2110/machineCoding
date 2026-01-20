@@ -1,7 +1,7 @@
-package org.example.repository;
+package org.splitWise.repository;
 
-import org.example.model.User;
-import org.example.model.split.Split;
+import org.splitWise.model.User;
+import org.splitWise.model.split.Split;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
