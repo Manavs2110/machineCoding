@@ -16,12 +16,6 @@ public class ConsumerWorker implements Runnable{
     @Override
     public void run(){
         while(true){
-                if(consumer.isPaused()){
-                    try{
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {}
-                    continue;
-                }
                 int consumerOffset = consumer.getOffset(topic.getTopicId());
                 Message msg = topic.getMessage(consumerOffset);
             if (msg == null) {
@@ -33,10 +27,10 @@ public class ConsumerWorker implements Runnable{
                                 " (offset " + msg.getOffSet() + ")"
                 );
                 synchronized (consumer){
-                    consumer.advanceOffset(topic.getTopicId());
+                    if(consumer.getOffset(topic.getTopicId()) == consumerOffset){
+                        consumer.advanceOffset(topic.getTopicId());
+                    }
                 }
-
-
         }
     }
 }

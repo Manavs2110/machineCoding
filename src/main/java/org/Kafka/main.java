@@ -19,9 +19,7 @@ public class main {
         producerService.publish("orders", "Order-2");
         Thread.sleep(1000);
         System.out.println("\n--- Resetting offset for C1 ---\n");
-        consumer1.pause();
         consumer1.resetOffset("orders", 0);
-        consumer1.resume();
         producerService.publish("orders", "Order-3");
     }
 }

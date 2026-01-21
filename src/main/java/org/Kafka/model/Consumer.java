@@ -6,18 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Consumer {
     String consumerId;
     Map<String, Integer> offsets = new ConcurrentHashMap<>();
-    private volatile boolean paused=false;
     public Consumer(String consumerId) {
         this.consumerId = consumerId;
-    }
-    public void pause(){
-        this.paused = true;
-    }
-    public void resume(){
-        this.paused = false;
-    }
-    public boolean isPaused(){
-        return this.paused;
     }
     public String getConsumerId() {
         return consumerId;

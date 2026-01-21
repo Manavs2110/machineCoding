@@ -13,10 +13,6 @@ public class Topic {
         this.messages = new ArrayList<>();
     }
 
-    public int getNextOffset() {
-        return nextOffset;
-    }
-
     public String getTopicId() {
         return topicId;
     }
@@ -29,11 +25,9 @@ public class Topic {
     public synchronized Message getMessage(int offset) {
         while(offset>= messages.size()) {
             try {
-                wait(100);
-                if(offset>= messages.size()) return null;
+                wait();
             } catch (InterruptedException ignored) {}
         }
-
         return messages.get(offset);
     }
 
