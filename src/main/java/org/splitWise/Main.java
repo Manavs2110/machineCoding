@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -22,13 +23,13 @@ public class Main {
         User user2 = new User(2, "u2","u2@gmail.com","9999999999");
         User user3 = new User(3, "u3","u3@gmail.com","9898989899");
         User user4 = new User(4, "u4","u4@gmail.com","8976478292");
+
         ExpenseRepository expenseRepository = new ExpenseRepository();
         UserService userService = new UserService(expenseRepository);
         userService.addUser(user1);
         userService.addUser(user2);
         userService.addUser(user3);
         userService.addUser(user4);
-
         SplitwiseService service = new SplitwiseService(expenseRepository);
         while(true){
             Scanner sc = new Scanner(System.in);
