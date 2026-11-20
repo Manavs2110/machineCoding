@@ -47,9 +47,14 @@ public class OrderService {
     }
 
     public void addItemsInCart(Customer customer, CartFoodItem cartFoodItem){
-        if(customer.getCart() == null) customer.setCart(new Cart());
+        if(customer.getCart() == null) customer.setCart(new Cart(cartFoodItem.getFoodItem().getRestaurantId()));
+        if(customer.getCart().getRestaurantId().equals(cartFoodItem.getFoodItem().getRestaurantId())) {
+            customer.clearCart();
+            customer.setCart(new Cart(cartFoodItem.getFoodItem().getRestaurantId()));
+        }
         customer.getCart().addCartItem(cartFoodItem);
     }
+
     public void printCart(Cart cart){
         for(CartFoodItem cartFoodItem: cart.getCartFoodItems()){
             System.out.println(cartFoodItem.getFoodItem().getName()+" "+cartFoodItem.getQuantity());

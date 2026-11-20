@@ -36,4 +36,12 @@ public class FoodItem {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
+    }
 }

@@ -7,13 +7,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TopicRepository {
     Map<String, Topic> broker = new ConcurrentHashMap<>();
+
     public void createTopic(String topicId){
-        broker.putIfAbsent(topicId, new Topic(topicId));
+        if(broker.putIfAbsent(topicId, new Topic(topicId)) != null){
+            throw new IllegalArgumentException("Topic " + topicId + " already exists");
+        }
     }
-    public void publish(String topicId, String message){
-        broker.get(topicId).publish(message);
-    }
+
     public Topic getTopic(String topicId){
-        return broker.get(topicId);
+        Topic topic = broker.get(topicId);
+        if(topic == null){
+            throw new IllegalArgumentException("Topic " + topicId + " does not exist");
+        }
+        return topic;
     }
 }

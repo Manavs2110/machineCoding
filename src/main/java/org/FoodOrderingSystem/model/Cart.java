@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
+    String restaurantId;
     List<CartFoodItem> cartFoodItems;
 
 
-    public Cart() {
+    public Cart(String restaurantId) {
+        this.restaurantId = restaurantId;
         this.cartFoodItems = new ArrayList<>();
     }
 
@@ -20,5 +22,13 @@ public class Cart {
     }
     public void addCartItem(CartFoodItem cartFoodItem){
         cartFoodItems.add(cartFoodItem);
+    }
+
+    public String getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
     }
 }
