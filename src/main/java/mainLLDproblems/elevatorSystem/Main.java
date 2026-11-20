@@ -3,6 +3,20 @@ package mainLLDproblems.elevatorSystem;
 
 import java.util.*;
 
+
+
+/*
+Requirements:
+1. Make a Elevator System with multiple Elevators
+2. Able to serve Request from inside and Outside of elevator
+3. Strategies for ElevatorSelection for Outside Requests
+
+Non-functional Requirements:
+1. Extensible
+2. Thread-safe
+3. Maintainability
+ */
+
 class Elevator implements Runnable{
     int id;
     volatile int currentFloor=0;
